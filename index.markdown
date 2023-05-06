@@ -1,6 +1,10 @@
 ---
-layout: default
+layout: home
 ---
+<hr>
+<h3><a href="./about/">About</a> -- <a href="./windows/">Windows</a> -- <a href="./linux/">Linux</a> -- <a href="./network/">Network</a></h3>
+<hr>
+
 
 # Who the f is that guy ?
 
