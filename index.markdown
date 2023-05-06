@@ -8,9 +8,15 @@ layout: home
 
 # Who the f is that guy ?
 
-<img src="assets/images/virtualsamurai.jpg">
+<img src="assets/images/virtualsamurai.jpg" style="padding-right:30px;max-height:200px" align="left">
 
-Hello friend, i'm an infosec enthusiast. I like learning new things, breaking stuff and solving problems.
+Hello friend, welcome to my blog.
+
+I like learning new things, breaking stuff and solving problems.
+
+Currently working as a pentester / red team operator.
+
+<br clear="left"/>
 
 # Social Links
 
