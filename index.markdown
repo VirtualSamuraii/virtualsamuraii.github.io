@@ -2,7 +2,7 @@
 layout: home
 ---
 <hr>
-<h3><a href="./about/">About</a> -- <a href="./windows/">Windows</a> -- <a href="./linux/">Linux</a> -- <a href="./network/">Network</a></h3>
+<h3><a href="./about/">About</a> -- <a href="./windows/">Windows</a> -- <a href="./linux/">Linux</a> -- <a href="./network/">Network</a> -- <a href="./vulns/">Vulns</a></h3> 
 <hr>
 
 

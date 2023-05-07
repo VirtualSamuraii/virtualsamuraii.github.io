@@ -4,6 +4,12 @@ title: About
 permalink: /about/
 ---
 
-# TODO
+# What's this ?
 
-Coming soon
+This is a blog where I started posting some of my offensive OR defensive security research.
+
+# Why ?
+
+Sharing is caring. Thanks to the infosec community, I've learnt a lot.
+
+
