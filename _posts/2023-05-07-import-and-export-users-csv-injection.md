@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: vulns
-title: "CVE-2022-3558 - Wordpress Plugins - Import and export users and customers 1.20.4 - CSV Injection"
+title: "CVE-2022-3558 - Wordpress Plugins - Import and export users and customers - CSV Injection"
 permalink: "/:categories/:title/"
 ---
 
