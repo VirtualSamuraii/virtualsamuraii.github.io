@@ -12,7 +12,7 @@ permalink: "/:categories/:title/"
 
 Cet article est le premier d’une collection de notes personnelles et d’expérimentations. Il a pour objectif de dresser un portrait générique des solutions de sécurité appelées **EDR**.
 
-Dans un premier temps, je décrirai l’architecture générale qu’on peut retrouver avec la plupart des solutions du marché.
+Pour commencer, je décrirai l’architecture générale qu’on peut retrouver avec la plupart des solutions du marché.
 
 Ensuite, je présenterai les composants logiciels (exécutables, services, DLL, drivers…) qui sont installés sur les machines surveillées (appelées aussi **endpoints**).
 
@@ -22,7 +22,7 @@ Pour illustrer mes propos, j’utilise la solution **SentinelOne** en exemple ca
 
 ## Définition
 
-**EDR** pour **Endpoint Detection and Response** est un terme qui définit une solution de sécurité qui combine plusieurs éléments, couches et techniques pour détecter des menaces et y répondre, sur un poste de travail, un serveur ou un réseau.
+**EDR** pour **Endpoint Detection and Response** est un terme qui définit une solution de sécurité qui combine plusieurs éléments, couches et techniques pour détecter des menaces et y répondre, sur un poste de travail, un serveur.
 
 Quelle est la différence entre un **AV** (Antivirus) et un **EDR** ? 
 
@@ -30,19 +30,19 @@ Quelle est la différence entre un **AV** (Antivirus) et un **EDR** ?
 
 À l’époque où les malwares étaient écrits juste pour le fun par des ~~cinglés~~ passionnés, en slip devant leur écran, il existait très peu voire pas du tout de moyens de défense. Puis, un jour, ces mecs là sont passés de “juste pour le fun” à “pourquoi pas un peu de profit hehe”. 
 
-Sans oublier les puissances militaires, qui avaient déjà compris l’intérêt de ces nouvelles armes pouvant parfois renverser une nation entière (CFQD Stuxnet dans le conflit Israël / Iran pour l’armement nucléaire). 
+Sans oublier les puissances militaires, qui avaient déjà compris l’intérêt de ces nouvelles armes pouvant parfois renverser une nation entière (par exemple Stuxnet dans le conflit Israël / Iran pour l’armement nucléaire). 
 
 Historiquement, les AV étaient les premières solutions de sécurité développées pour réagir face à l’émergence de ces nouvelles menaces.
 
-Au début, les AV reproduisaient une analyse statique et les détections étaient principalement basées sur les signatures des fichiers malveillants. Puis, avec le temps, ils ont commencé à essayer de reproduire une analyse dynamique, par exemple, en émulant le programme malveillant dans un bac à sable (sandbox).
+Au début, les AV reproduisaient une analyse statique et les détections étaient principalement basées sur les signatures des fichiers malveillants. Puis, avec le temps, ils ont commencé à reproduire une analyse dynamique, par exemple, en émulant le programme malveillant dans un bac à sable (sandbox).
 
 En face, les **maldev*** ripostaient avec des **nouvelles techniques de contournement de bac à sable (sandbox)** et implémentaient des techniques d’**anti rétro-ingénierie et anti-débogage.**
 
 Avec les années, les éditeurs ont dû s’adapter à l’évolution de ces malwares et développer de nouvelles solutions plus robustes et plus intelligentes. Il a fallu créer des nomenclatures pour le marketing et la vente de ces produits (EDR/XDR/MDR). 
 
-Finalement, on peut dire qu’**un EDR est un AV avec plus de fonctionnalités et de moyens de détection**. Nous verrons par la suite pourquoi. 
+Finalement, on peut dire qu’**un EDR est un AV mais avec plus de fonctionnalités et de moyens de détection**. Nous verrons par la suite pourquoi. 
 
-Certains diront même qu’un AV/EDR est un malware. Ce fut notamment le cas de Kaspersky durant l’histoire du leak des outils de la NSA.
+Certains diront même qu’un AV/EDR est un malware. Ce fut notamment le cas de Kaspersky durant l’histoire du leak des outils de la NSA par le groupe TheShadowBrokers en 2016.
 
 ***maldev** : développeur de malwares
 
@@ -52,15 +52,15 @@ Voici un exemple générique d’architecture utilisée par les éditeurs de sol
 
 <img src="../../assets/images/posts/redteam/anatomie-edr-pt-1/edr_archi.png" style="display:block;margin:auto">
 
-**L’EDR collecte des données** sur les systèmes qu’il surveille en temps réel, à l’aide d’agents installés (agent.exe par exemple). Les données peuvent regrouper des fichiers, adresses IP, URLs, clés de registre, des processus. Bref, tout ce qui peut se produire sur un système est collecté.
+**L’EDR collecte des données** sur les systèmes qu’il surveille en temps réel. Les données peuvent regrouper des fichiers, adresses IP, URLs, clés de registre, des processus. Bref, tout ce qui peut se produire sur un système est collecté.
 
 Ces données sont ensuite transférées, avec amour et respect de la RGPD, sur l’infrastructure de l’éditeur de la solution et peuvent faire l’objet d’analyses approfondies. 
 
 <img src="../../assets/images/posts/redteam/anatomie-edr-pt-1/sentinelone_ui.png" style="display:block;margin:auto">
 
-Sur l’image ci-dessus, on peut identifier deux URLs. La première correspond à l’interface de gestion et la seconde au “**cloud**” de l’éditeur de la solution.
+Sur l’image ci-dessus, on peut observer deux URLs. La première correspond à l’interface de gestion et la seconde au “**cloud**” de l’éditeur de la solution.
 
-Les analystes et utilisateurs de la solution peuvent se connecter à une interface, exposée sur internet, qui leur permet de gérer le parc des machines surveillées, les alertes, les configurations et politiques de sécurité.
+Les analystes et utilisateurs de la solution peuvent se connecter à une interface, exposée sur internet qui leur permet de gérer le parc des machines surveillées, les alertes, les configurations et politiques de sécurité.
 
 Ci-dessous, un exemple de l’interface de gestion de la solution **SentinelOne** :
 
@@ -76,7 +76,7 @@ Il est aussi possible d’administrer les machines à distance et d’exécuter 
 
 ## Paquet d’installation
 
-Lorsqu’un agent est installé sur un appareil, il se passe tout un tas de choses qu’on va essayer de voir ensemble dans cette partie.
+Lorsqu’un agent est installé sur une machine, il se passe tout un tas de choses qu’on va essayer de voir ensemble dans cette partie.
 
 Les agents sont distribués par les éditeurs sous la forme de paquets pour plusieurs plateformes (Linux, Windows…). 
 
@@ -104,7 +104,7 @@ Ce répertoire contient tous les exécutables, bibliothèques, fichiers de confi
 
 ## Drivers
 
-Plusieurs pilotes sont installés sur le système. Dans le cas de SentinelOne, on en a 3 :
+S1 enregistre 3 nouveaux pilotes lors de l’installation de l’agent sur le système :
 
 - SentinelDeviceControl
 - SentinelELAM
@@ -160,10 +160,10 @@ Comme on l’a vu plus haut avec les drivers, les DLL qui sont injectées serven
 
 En conclusion :
 
-- Un EDR c’est une architecture avec plusieurs composants et couches
+- L’architecture d’un EDR est composée de plusieurs élements et couches. 
 - Un agent est installé sur chaque machine et collecte les données.
 - Les services gèrent les exécutables et permettent le bon fonctionnement de la solution.
-- Un pilote (driver) est installé et surveille la création de nouveaux processus, threads, etc…
+- Un pilote (driver) est installé et surveille la création de nouveaux processus, threads, etc.
 - Chaque nouveau process se voit injecter une ou plusieurs DLL qui vont surveiller les appels aux fonctions de l’API Windows (API Hooking).
 - Si des actions malveillantes sont détectées, elles sont analysées et une réponse a lieu.
 
