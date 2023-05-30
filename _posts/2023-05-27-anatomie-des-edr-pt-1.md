@@ -22,7 +22,7 @@ Pour illustrer mes propos, j’utilise la solution **SentinelOne** en exemple ca
 
 ## Définition
 
-**EDR** pour **Endpoint Detection and Response** est un terme qui définit une solution de sécurité qui combine plusieurs éléments, couches et techniques pour détecter des menaces et y répondre, sur un poste de travail, un serveur.
+**EDR** pour **Endpoint Detection and Response** est un terme qui définit une solution de sécurité qui combine plusieurs éléments, couches et techniques pour détecter des menaces et y répondre, sur un poste de travail ou un serveur.
 
 Quelle est la différence entre un **AV** (Antivirus) et un **EDR** ? 
 
