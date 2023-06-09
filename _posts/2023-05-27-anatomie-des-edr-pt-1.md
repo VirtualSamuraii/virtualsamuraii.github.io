@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: redteam
-title: "Anatomie des EDR pt.1"
+title: "Anatomie des EDR pt.1 : Architecture générale"
 permalink: "/:categories/:title/"
 ---
 
@@ -121,7 +121,7 @@ La documentation de Microsoft fait un excellent travail pour les décrire :
 
 [https://learn.microsoft.com/fr-fr/windows-hardware/drivers/kernel/types-of-windows-drivers](https://learn.microsoft.com/fr-fr/windows-hardware/drivers/kernel/types-of-windows-drivers) 
 
-Parmi ces pilotes, **SentinelMonitor** sert à surveiller le système. Pour être plus précis, il écoute les évènements qui se produisent et fournit une fonction au système, qu’on appelle une **callback routine**, qui sera exécutée lorsqu’un évènement qui l’intéresse se produit (création d’un processus, d’un thread, etc). 
+Parmi ces pilotes, **SentinelDeviceControl** sert à surveiller le système. Pour être plus précis, il écoute les évènements qui se produisent et fournit une fonction au système, qu’on appelle une **callback routine**, qui sera exécutée lorsqu’un évènement qui l’intéresse se produit (création d’un processus, d’un thread, etc). 
 
 Microsoft documente ce mécanisme ici : [https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/callback-objects](https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/callback-objects)
 
