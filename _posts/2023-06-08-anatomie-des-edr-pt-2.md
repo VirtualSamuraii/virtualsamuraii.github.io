@@ -7,7 +7,7 @@ permalink: "/:categories/:title/"
 
 # Anatomie des EDR Pt.2 : Kernel, Drivers & Callbacks
 
-<img src="../../assets/images/posts/redteam/anatomie-edr-pt-2/0-xp.png" style="display:block;margin:auto;height:400px;width:auto">
+<img src="../../assets/images/posts/redteam/anatomie-edr-pt-2/0-xp.png" style="display:block;margin:auto;max-height:400px;width:auto">
 
 Nous avons vu précédemment qu’un **EDR** c’est avant tout des **pilotes** qui sont installés sur le système.
 
@@ -87,7 +87,7 @@ Il existe une table des syscalls documentée par des volontaires (attention la d
 
 Ci-dessous un magnifique schéma illustrant un appel à la fonction **ReadFile** par une application user mode (notepad.exe ou une autre application qui ouvre un fichier sur le disque par exemple).
 
-<img src="../../assets/images/posts/redteam/anatomie-edr-pt-2/7-syscall.png" style="display:block;margin:auto;height:600px;width:auto">
+<img src="../../assets/images/posts/redteam/anatomie-edr-pt-2/7-syscall.png" style="display:block;margin:auto;max-height:600px;width:auto">
 
 *Source : [https://www.matteomalvica.com/minutes/windows_kernel/](https://www.matteomalvica.com/minutes/windows_kernel/)*
 
@@ -247,7 +247,7 @@ Il était initialement vendu 3000$ par un développeur et a été gratuitement r
 
 Selon Microsoft : “Un pilote de filtre de système de fichiers, ou minifiltre, intercepte les demandes ciblées sur un système de fichiers ou un autre pilote de filtre de système de fichiers.”
 
-<img src="../../assets/images/posts/redteam/anatomie-edr-pt-2/11-minifiltre.png" style="display:block;margin:auto;height:500px;width:auto">
+<img src="../../assets/images/posts/redteam/anatomie-edr-pt-2/11-minifiltre.png" style="display:block;margin:auto;max-height:500px;width:auto">
 
 **Ca veut dire quoi concrètement ?**
 
@@ -292,7 +292,7 @@ Ainsi, le driver ELAM sera notifié lors du chargement d’un pilote et des DLL 
 
 Ci-dessous un tableau récapitulatif des stratégies de signature pour les versions du système d’exploitation client :
 
-<img src="../../assets/images/posts/redteam/anatomie-edr-pt-2/10-driver.png" style="display:block;margin:auto;height:500px;width:auto">
+<img src="../../assets/images/posts/redteam/anatomie-edr-pt-2/10-driver.png" style="display:block;margin:auto;max-height:500px;width:auto">
 
 # Conclusion
 
