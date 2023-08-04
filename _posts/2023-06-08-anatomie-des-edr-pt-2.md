@@ -144,9 +144,9 @@ Un pilote peut créer un **objet Callback**, qui possède une ou plusieurs **cal
 
 Il existe quelques fonctions mises à disposition par Microsoft et qui sont généralement utilisés par les éditeurs d’antivirus :
 
-- ****PsSetCreateProcessNotifyRoutine****
-- ****PsSetCreateThreadNotifyRoutine****
-- ****PsSetLoadImageNotifyRoutine****
+- **PsSetCreateProcessNotifyRoutine**
+- **PsSetCreateThreadNotifyRoutine**
+- **PsSetLoadImageNotifyRoutine**
 
 Ces fonctions permettent aux éditeurs de surveiller la création de nouveaux processus, threads ou encore le chargement d’images (driver, exécutable, DLL).
 
@@ -276,8 +276,6 @@ ELAM est lancé en premier par le kernel, avant tous les autres pilotes et est d
 *Source : [https://www.anoopcnair.com/understanding-windows-trusted-boot/](https://www.anoopcnair.com/understanding-windows-trusted-boot/)*
 
 Le driver ELAM développé par l’éditeur va vérifier la signature des autres drivers et la classifie en **good**, **bad** ou **unknown** selon une base de signatures malveillantes stockée dans le registre Windows (**HKLM\ELAM\<VendorName>**). Cette base n’est accessible que durant le démarrage de la machine pour des raisons de performance.
-
-Concrètement, le driver ELAM développé par l’éditeur va vérifier les signatures des autres drivers et les classifie en **good**, **bad** ou **unknown** selon une base de signatures malveillantes.
 
 Pour analyser chaque pilote, le driver ELAM peut faire appel au kernel callbacks :
 
