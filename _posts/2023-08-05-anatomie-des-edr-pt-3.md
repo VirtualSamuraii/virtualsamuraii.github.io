@@ -8,7 +8,7 @@ permalink: "/:categories/:title/"
 
 # Anatomie des EDR Pt.3 : Processus, services et registre
 
-<img src="../../assets/images/posts/redteam/anatomie-edr-pt-3/img_1.png" style="display:block;margin:auto">
+<img src="../../assets/images/posts/redteam/anatomie-edr-pt-3/img_1.png" style="display:block;margin:auto;max-height:400px;width:auto">
 
 Dans la première partie de cette série, nous avons remarqué la création de nouveaux services lors de l’installation d’un agent EDR. 
 
