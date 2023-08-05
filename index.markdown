@@ -20,8 +20,8 @@ Currently working as a pentester / red team operator.
 
 # Social Links
 
-**GitHub:** [https://github.com/virtualsamuraii](https://github.com/virtualsamuraii)
+**Github :** [https://github.com/virtualsamuraii](https://github.com/virtualsamuraii)
 
-**Twitter:** [https://twitter.com/virtualsamuraii](https://twitter.com/virtualsamuraii/)
+**Twitter :** [https://twitter.com/virtualsamuraii](https://twitter.com/virtualsamuraii/)
 
-**Offensive Wave** [https://offensivewave.com/](https://offensivewave.com/)
+**Offensive Wave :** [https://offensivewave.com/](https://offensivewave.com/)

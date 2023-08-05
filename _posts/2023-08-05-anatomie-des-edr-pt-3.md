@@ -33,7 +33,7 @@ Sur le système d’exploitation Windows, il existe 4 types de processus user-mo
 - **Processus utilisateur** : applications qui peuvent être en 32 ou 64 bits comme notepad par exemple.
 - **Processus de service** : hébergent les services Windows comme PrintSpooler ou TaskScheduler et sont gérés par le gestionnaire de services (**Service Control Manager**).
 - **Processus système** : natifs au système d’exploitation comme le processus logon ou le gestionnaire de session.
-- **Processus d’environnement sous-système** : ****intermédiaires entre les autres processus et le kernel.
+- **Processus d’environnement sous-système** : intermédiaires entre les autres processus et le kernel.
 
 <img src="../../assets/images/posts/redteam/anatomie-edr-pt-3/img_2.png" style="display:block;margin:auto">
 
