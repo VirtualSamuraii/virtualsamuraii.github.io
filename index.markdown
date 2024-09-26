@@ -24,4 +24,4 @@ Currently working as a pentester / red team operator.
 
 **Twitter :** [https://twitter.com/virtualsamuraii](https://twitter.com/virtualsamuraii/)
 
-**Offensive Wave :** [https://offensivewave.com/](https://offensivewave.com/)
+**Cyber Wave :** [https://cyberwave.network/](https://cyberwave.network/)
